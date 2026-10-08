@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BUSINESS } from "@/lib/business";
 import { Arrow, ArrowUpRight, Check, Logo, Shirt } from "./Icons";
 
@@ -38,8 +39,8 @@ export function Hero() {
           </div>
           <h1>Fresh laundry, without the laundry day.</h1>
           <p className="hero-lead">
-            Book a pickup in under a minute. We collect, clean, fold and return your clothes to your door — crisp,
-            fresh and ready to wear.
+            Laundry and dry cleaning pickup &amp; delivery in Lagos. Book in under a minute — we collect, clean, fold
+            and return your clothes to your door, crisp, fresh and ready to wear.
           </p>
           <div className="row-wrap">
             <a href="#schedule" className="btn btn-primary">
@@ -57,8 +58,16 @@ export function Hero() {
         </div>
 
         <div className="hero-visual">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="hero-photo" src="/images/hero.jpg" alt="A row of clean commercial washing machines" fetchPriority="high" />
+          <Image
+            className="hero-photo"
+            src="/images/hero.jpg"
+            alt="Commercial washing machines at Paramount Laundry, Lagos"
+            width={1600}
+            height={1064}
+            sizes="(max-width: 900px) 100vw, 560px"
+            fetchPriority="high"
+            loading="eager"
+          />
           <div className="chip-dark">
             <Shirt />
             <div>
@@ -111,13 +120,12 @@ export function Services() {
             <div className="eyebrow">Our services</div>
             <h2 className="h2">Everything your wardrobe needs, under one roof.</h2>
           </div>
-          <p>From everyday wash &amp; fold to delicate dry cleaning, every order is handled by people who take fabric seriously.</p>
+          <p>Laundry, dry cleaning and ironing in Lagos — from everyday wash &amp; fold to delicate fabrics, every order is handled by people who take fabric seriously.</p>
         </div>
         <div className="cards">
           {SERVICE_CARDS.map((s) => (
             <article key={s.title} className="service-card">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={s.img} alt={s.alt} loading="lazy" />
+              <Image src={s.img} alt={s.alt} width={779} height={519} sizes="(max-width: 600px) 100vw, 300px" />
               <h3>{s.title}</h3>
               <p>{s.text}</p>
             </article>
@@ -159,8 +167,14 @@ export function About() {
   return (
     <section id="about" className="section section-white">
       <div className="container about-grid">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="about-photo" src="/images/about.jpg" alt="Inside a clean, bright laundry with rows of machines" loading="lazy" />
+        <Image
+          className="about-photo"
+          src="/images/about.jpg"
+          alt="Inside a clean, bright laundry with rows of washing machines"
+          width={800}
+          height={532}
+          sizes="(max-width: 900px) 100vw, 560px"
+        />
         <div className="about-copy">
           <div className="eyebrow">About us</div>
           <h2 className="h2">Your time is worth more than a laundry day.</h2>
