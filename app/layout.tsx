@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NG",
   },
-  icons: { icon: "/icon.svg" },
+  icons: { icon: "/icon.svg", apple: "/apple-icon.png" },
 };
 
 export const viewport: Viewport = {

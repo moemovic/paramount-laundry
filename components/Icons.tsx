@@ -2,10 +2,10 @@ type P = { size?: number; color?: string; width?: number };
 
 export function Logo({ size = 36 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 36 36" fill="none" aria-hidden="true">
-      <rect width="36" height="36" rx="11" fill="#1D4ED8" />
-      <path d="M9 14c3 0 3-3 6-3s3 3 6 3 3-3 6-3" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" />
-      <path d="M9 21c3 0 3-3 6-3s3 3 6 3 3-3 6-3" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" opacity="0.6" />
+    <svg width={size} height={size} viewBox="0 0 64 64" fill="none" aria-hidden="true">
+      <rect width="64" height="64" rx="18" fill="#1D4ED8" />
+      <path d="M32 31V14h4.5a5.5 5.5 0 0 1 0 11H32" stroke="#fff" strokeWidth="3.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M32 31L12.5 45.2c-1.2.9-.6 2.8.9 2.8h37.2c1.5 0 2.1-1.9.9-2.8L32 31z" stroke="#fff" strokeWidth="3.6" strokeLinejoin="round" />
     </svg>
   );
 }
