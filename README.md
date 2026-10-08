@@ -3,7 +3,7 @@
 Pickup & delivery laundry website for Paramount Laundry (Alimosho, Lagos), built with **Next.js 16 (App Router) + React 19 + TypeScript**.
 
 - 3-step pickup booking: services → calendar date + one-hour window → contact details
-- Every booking is **emailed to paramountlaundry@gmail.com** (via [Resend](https://resend.com))
+- Every booking is **emailed to paramountlaundry0@gmail.com** (via [Resend](https://resend.com))
 - Booked windows are **locked for everyone** (stored in Upstash Redis), so no two customers can book the same hour
 - Rules enforced on the server too: Sundays closed, Thursdays from 10 AM, no past times, bookings up to 120 days ahead (Lagos time)
 - Spam honeypot, input validation, SEO metadata and LocalBusiness structured data
@@ -17,10 +17,10 @@ Pickup & delivery laundry website for Paramount Laundry (Alimosho, Lagos), built
    This adds `KV_REST_API_URL` and `KV_REST_API_TOKEN` automatically.
 
 3. **Email (Resend)**
-   - Sign up at resend.com **using paramountlaundry@gmail.com** (on the free plan without a domain, Resend only delivers to the address you signed up with).
+   - Sign up at resend.com **using paramountlaundry0@gmail.com** (on the free plan without a domain, Resend only delivers to the address you signed up with).
    - Create an API key.
    - In Vercel: *Settings → Environment Variables* → add `RESEND_API_KEY` = your key.
-   - Optional: `BOOKING_EMAIL_TO` (defaults to paramountlaundry@gmail.com).
+   - Optional: `BOOKING_EMAIL_TO` (defaults to paramountlaundry0@gmail.com).
 
 4. **Redeploy** (*Deployments → ⋯ → Redeploy*) so the new variables take effect. Make a test booking — the email should arrive within seconds.
 

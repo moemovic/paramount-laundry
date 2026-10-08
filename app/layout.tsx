@@ -30,7 +30,7 @@ const localBusiness = {
   "@type": "DryCleaningOrLaundry",
   name: "Paramount Laundry",
   telephone: "+2347031365794",
-  email: "paramountlaundry@gmail.com",
+  email: "paramountlaundry0@gmail.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "1 Baale Crescent, Ikola Road",

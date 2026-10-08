@@ -2,7 +2,7 @@ export const BUSINESS = {
   name: "Paramount Laundry",
   phoneDisplay: "0703 136 5794",
   phoneHref: "tel:+2347031365794",
-  email: "paramountlaundry@gmail.com",
+  email: "paramountlaundry0@gmail.com",
   addressLine1: "1 Baale Crescent, Ikola Road",
   addressLine2: "Alimosho, Lagos 102213",
   mapsUrl:
