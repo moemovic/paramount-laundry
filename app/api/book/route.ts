@@ -4,6 +4,7 @@ import { BUSINESS, SERVICES } from "@/lib/business";
 import { dayStatus, parseKey, prettyDate, slotLabel, slotStatus } from "@/lib/schedule";
 import { claimSlot, releaseSlot, storeConfigured } from "@/lib/store";
 import { emailConfigured, sendBookingEmail } from "@/lib/email";
+import { sendWhatsAppAlert } from "@/lib/whatsapp";
 
 export const dynamic = "force-dynamic";
 
@@ -63,15 +64,20 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Sorry, that time was just booked. Please choose another window." }, { status: 409 });
   }
 
+  const details = {
+    id, services: serviceLabels, dateLabel: prettyDate(date), slotLabel: slotLabel(slot), name, phone, address, notes,
+  };
+
   try {
-    await sendBookingEmail({
-      id, services: serviceLabels, dateLabel: prettyDate(date), slotLabel: slotLabel(slot), name, phone, address, notes,
-    });
+    await sendBookingEmail(details);
   } catch (e) {
     console.error("[book] email error", e);
     await releaseSlot(date, slot).catch(() => {});
     return NextResponse.json({ error: `We couldn't send your booking. Please try again or call ${BUSINESS.phoneDisplay}.` }, { status: 502 });
   }
+
+  // WhatsApp alert after the booking is confirmed; a failure here never undoes the booking.
+  await sendWhatsAppAlert(details).catch((e) => console.error("[book] whatsapp alert failed", e));
 
   return NextResponse.json({ ok: true, id });
 }

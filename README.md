@@ -3,7 +3,7 @@
 Pickup & delivery laundry website for Paramount Laundry (Alimosho, Lagos), built with **Next.js 16 (App Router) + React 19 + TypeScript**.
 
 - 3-step pickup booking: services → calendar date + one-hour window → contact details
-- Every booking is **emailed to paramountlaundry0@gmail.com** (via [Resend](https://resend.com))
+- Every booking is **emailed to paramountlaundry0@gmail.com** (via [Resend](https://resend.com)) and can also be **sent to WhatsApp** (via CallMeBot)
 - Booked windows are **locked for everyone** (stored in Upstash Redis), so no two customers can book the same hour
 - Rules enforced on the server too: Sundays closed, Thursdays from 10 AM, no past times, bookings up to 120 days ahead (Lagos time)
 - Spam honeypot, input validation, SEO metadata and LocalBusiness structured data
@@ -22,7 +22,13 @@ Pickup & delivery laundry website for Paramount Laundry (Alimosho, Lagos), built
    - In Vercel: *Settings → Environment Variables* → add `RESEND_API_KEY` = your key.
    - Optional: `BOOKING_EMAIL_TO` (defaults to paramountlaundry0@gmail.com).
 
-4. **Redeploy** (*Deployments → ⋯ → Redeploy*) so the new variables take effect. Make a test booking — the email should arrive within seconds.
+4. **WhatsApp alerts (optional, free)** — get each booking on WhatsApp too:
+   - Follow https://www.callmebot.com/blog/free-api-whatsapp-messages/ from the phone that should receive alerts:
+     save the CallMeBot number shown there, then send it *I allow callmebot to send me messages*.
+   - It replies with an API key. In Vercel add `CALLMEBOT_APIKEY` = that key
+     (and `WHATSAPP_ALERT_PHONE` if alerts should go to a number other than +2347031365794).
+
+5. **Redeploy** (*Deployments → ⋯ → Redeploy*) so the new variables take effect. Make a test booking — the email (and WhatsApp alert) should arrive within seconds.
 
 ### Using your own domain (recommended later)
 Add the domain in Vercel (*Settings → Domains*). Then verify the same domain in Resend and set
