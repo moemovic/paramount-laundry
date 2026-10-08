@@ -5,7 +5,7 @@ Pickup & delivery laundry website for Paramount Laundry (Alimosho, Lagos), built
 - 3-step pickup booking: services → calendar date + one-hour window → contact details
 - Every booking is **emailed to paramountlaundry0@gmail.com** (via [Resend](https://resend.com)) and can also be **sent to WhatsApp** (via CallMeBot)
 - Booked windows are **locked for everyone** (stored in Upstash Redis), so no two customers can book the same hour
-- Rules enforced on the server too: Sundays closed, Thursdays from 10 AM, no past times, bookings up to 120 days ahead (Lagos time)
+- Rules enforced on the server too: Sundays closed, Thursdays from 10 AM, one-hour pickup windows 10 AM – 6 PM, no past times, bookings up to 120 days ahead (Lagos time)
 - Spam honeypot, input validation, SEO metadata and LocalBusiness structured data
 
 ## Deploy on Vercel (≈10 minutes)

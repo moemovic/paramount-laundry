@@ -23,8 +23,8 @@ export const MONTHS = [
 /** How far ahead customers may book. */
 export const MAX_DAYS_AHEAD = 120;
 
-/** Pickup windows are one hour long, from 8 AM up to the 6–7 PM slot. */
-export const SLOT_START_HOURS = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+/** Pickup windows are one hour long: 10–11 AM up to the 5–6 PM slot. */
+export const SLOT_START_HOURS = [10, 11, 12, 13, 14, 15, 16, 17];
 
 export function formatHour(h: number): string {
   if (h === 12) return "12 PM";
@@ -99,6 +99,7 @@ export type SlotStatus = "ok" | "closed" | "passed";
 /** Whether a slot is within opening hours and still in the future (booked-ness is checked separately). */
 export function slotStatus(key: string, start: number, now = lagosNow()): SlotStatus {
   const hours = OPENING[weekdayOf(key)];
+  if (!SLOT_START_HOURS.includes(start)) return "closed";
   if (!hours || start < hours.open || start + 1 > hours.close) return "closed";
   if (key === now.key && start <= now.hour) return "passed";
   return "ok";

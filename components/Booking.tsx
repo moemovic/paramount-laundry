@@ -258,7 +258,7 @@ export default function Booking() {
                             ),
                           )}
                         </div>
-                        <div className="cal-note">Sundays closed · Thursdays from 10 AM</div>
+                        <div className="cal-note">Pickups 10 AM – 6 PM · Sundays closed</div>
                       </div>
 
                       <div className="slots">

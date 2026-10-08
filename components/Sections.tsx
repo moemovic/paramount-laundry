@@ -138,7 +138,7 @@ export function Services() {
 
 export function HowItWorks() {
   const steps = [
-    { n: "01", t: "Schedule a pickup", d: "Choose your services, a date and a one-hour pickup window that suits you." },
+    { n: "01", t: "Schedule a pickup", d: "Choose your services, a date and a one-hour pickup window between 10 AM and 6 PM." },
     { n: "02", t: "We collect & clean", d: "We pick up from your door, send you a message with your order details, then clean every item with care." },
     { n: "03", t: "Delivered in 3–4 days", d: "Your clothes come back folded, pressed or on hangers — fresh and ready to wear." },
   ];
