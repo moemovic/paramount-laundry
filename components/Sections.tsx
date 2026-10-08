@@ -19,7 +19,8 @@ export function Header() {
           <a href="#faq">FAQ</a>
         </div>
         <a href="#schedule" className="btn btn-dark">
-          Schedule pickup
+          <span className="label-long">Schedule pickup</span>
+          <span className="label-short">Book now</span>
         </a>
       </nav>
     </header>

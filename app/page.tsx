@@ -1,4 +1,5 @@
 import Booking from "@/components/Booking";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { Faq, HoursCard } from "@/components/Interactive";
 import { About, Cta, Footer, Header, Hero, HowItWorks, Services, VisitCopy } from "@/components/Sections";
 
@@ -22,6 +23,7 @@ export default function Home() {
         <Cta />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }

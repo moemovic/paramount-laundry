@@ -8,7 +8,12 @@ export const BUSINESS = {
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Paramount+Laundry+1+Baale+Cres+Ikola+Rd+Alimosho+Lagos",
   hoursShort: "Mon – Sat, 8 AM – 7 PM",
+  // WhatsApp number in international format, digits only (0703 136 5794 → 2347031365794)
+  whatsappNumber: "2347031365794",
+  whatsappMessage: "Hello Paramount Laundry, I'd like to schedule a laundry pickup.",
 } as const;
+
+export const whatsappUrl = `https://wa.me/${BUSINESS.whatsappNumber}?text=${encodeURIComponent(BUSINESS.whatsappMessage)}`;
 
 export const SERVICES = [
   { id: "wash", label: "Wash & Fold", desc: "Everyday clothes, towels" },
